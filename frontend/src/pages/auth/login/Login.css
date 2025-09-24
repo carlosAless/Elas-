@@ -1,0 +1,60 @@
+.containerLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+#formLogin {
+  border-radius: 1rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 600px;
+}
+
+#formLogin .inputGroup {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  position: relative;
+}
+
+#formLogin .inputGroup input {
+  height: 50px !important;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(163, 170, 179);
+  padding-left: 30px;
+}
+
+#formLogin .inputGroup .btnLogin {
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: white;
+  font-size: large;
+  border: none;
+}
+
+#formLogin .inputGroup label {
+  font-weight: var(--standard-font-weight);
+}
+
+#formLogin .inputGroup .iconsInput {
+  position: absolute;
+  transform: translate(8px, 130%);
+  color: #979797;
+}
+
+#formLogin strong {
+  color: var(--standard-color);
+  cursor: pointer;
+}
+
+#formLogin span {
+  text-align: center;
+}

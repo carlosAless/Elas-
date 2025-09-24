@@ -1,0 +1,13 @@
+:root {
+  --standard-color: cornflowerblue;
+
+  --standard-font-weight: 500;
+}
+
+.title {
+  text-align: center;
+}
+
+.rose {
+  color: rgb(236, 131, 131);
+}
