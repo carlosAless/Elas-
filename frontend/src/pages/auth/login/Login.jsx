@@ -1,54 +1,92 @@
 import { IoMdMail } from "react-icons/io";
 import { FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom"; // Importe useNavigate e Link
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { supabase } from "../../../helper/supabaseClient";
 
 import "./Login.css";
 
 export const Login = () => {
+  const navigate = useNavigate();
+
+  // Estados para armazenar e-mail, senha e erros
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    setErrorMsg(""); // limpa erros antes de tentar logar
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      setErrorMsg(error.message);
+      return;
+    }
+
+    // Login bem-sucedido → Redireciona para a Dashboard
+    navigate("/dashboard");
+  };
+
   return (
-    <>
-      <div className="containerLogin">
-        <form action="" id="formLogin">
-          <div className="title">
-            <h1>
-              ElasPorElas<span className="rose">+</span>
-            </h1>
-          </div>
+    <div className="containerLogin">
+      <form id="formLogin" onSubmit={handleLogin}>
+        <div className="title">
+          <h1>
+            ElasPorElas<span className="rose">+</span>
+          </h1>
+        </div>
 
-          <span>Entre na sua conta para começar a fazer a diferença</span>
+        <span>Entre na sua conta para começar a fazer a diferença</span>
 
-          <div className="inputGroup">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="Digite seu email" />
-            <span className="iconsInput">
-              <IoMdMail />
-            </span>
-          </div>
+        {errorMsg && <p className="error">{errorMsg}</p>}
 
-          <div className="inputGroup">
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Digite sua senha"
-            />
-            <span className="iconsInput">
-              <FaLock />
-            </span>
-          </div>
-
-          <div className="inputGroup">
-            <input className="btnLogin" type="button" value="Login" />
-          </div>
-
-          <span>
-            Não possui uma conta?{" "}
-            <Link to="/cadastro" style={{ textDecoration: "none" }}>
-              <strong>Criar conta</strong>
-            </Link>
+        <div className="inputGroup">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Digite seu email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <span className="iconsInput">
+            <IoMdMail />
           </span>
-        </form>
-      </div>
-    </>
+        </div>
+
+        <div className="inputGroup">
+          <label htmlFor="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Digite sua senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <span className="iconsInput">
+            <FaLock />
+          </span>
+        </div>
+
+        <div className="inputGroup">
+          <input className="btnLogin" type="submit" value="Login" />
+        </div>
+
+        <span>
+          Não possui uma conta?{" "}
+          <Link to="/cadastro" style={{ textDecoration: "none" }}>
+            <strong>Criar conta</strong>
+          </Link>
+        </span>
+      </form>
+    </div>
   );
 };

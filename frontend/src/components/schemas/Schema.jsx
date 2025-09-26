@@ -13,7 +13,10 @@ export const FirstStepFormSchema = z
     password: z
       .string()
       .min(6, "A senha deve ter pelo menos 6 caracteres")
-      .max(30, "A senha não pode ter mais que 30 caracteres"),
+      .max(30, "A senha não pode ter mais que 30 caracteres")
+      .regex(/[a-z]/, "Senha deve conter letra minúscula")
+      .regex(/[A-Z]/, "Senha deve conter letra maiúscula")
+      .regex(/\d/, "Senha deve conter número"),
     confirmpassword: z.string().min(6, "Confirme sua senha"),
   })
   .refine((data) => data.password === data.confirmpassword, {
