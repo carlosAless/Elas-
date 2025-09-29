@@ -1,5 +1,5 @@
 // Register.jsx
-import "./Register.css";
+import "../auth.css";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FirstStepForm } from "../../../components/form/FirstStepForm";
@@ -10,6 +10,7 @@ import {
 import { useHook } from "../../../hooks/useForm";
 import { SecondStepForm } from "../../../components/form/SecondStepForm";
 import { useNavigate, Link } from "react-router-dom"; // Importe useNavigate e Link
+import { images } from "../../../assets/assets";
 
 export const Register = () => {
   const navigate = useNavigate(); // Hook para navegação programática
@@ -89,52 +90,69 @@ export const Register = () => {
 
   return (
     <div className="containerRegister">
-      <form id="formRegister">
-        <div className="title">
-          <h1>
-            ElasPorElas<span className="rose">+</span>
-          </h1>
-        </div>
-
-        <span>Crie sua conta para começar a fazer a diferença</span>
-
-        <div className="progress-indicator">Passo {currentStep + 1} de 2</div>
-
-        {currentComponent}
-
-        <div className="controls">
-          <input
-            id="btnControl"
-            type="button"
-            value="Voltar"
-            onClick={() => changeStep(currentStep - 1)}
-            disabled={currentStep === 0}
+      <div className="auth-container">
+        <div className="auth-left-panel">
+          <img
+            src={images.mulheres}
+            alt="ElasPorElas - Ilustração"
+            className="auth-image-left"
           />
-
-          {currentStep === 1 ? (
-            <input
-              className="btnRegister"
-              type="button"
-              value="Finalizar"
-              onClick={secondStepForm.handleSubmit(onSubmit)}
-            />
-          ) : (
-            <input
-              className="btnRegister"
-              type="button"
-              value="Avançar"
-              onClick={handleNext}
-            />
-          )}
         </div>
 
-        <span>
-          Já possui uma conta?{" "}
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <strong>Faça login</strong>
-          </Link>
-        </span>
-      </form>
+        <div className="auth-right-panel">
+          <form id="formRegister" className="auth-form">
+            <div className="form-title">
+              <h1>
+                ElasPorElas<span className="accent-color">+</span>
+              </h1>
+            </div>
+
+            <span className="form-subtitle">
+              Crie sua conta para começar a fazer a diferença
+            </span>
+
+            <div className="progress-indicator">
+              Passo {currentStep + 1} de 2
+            </div>
+
+            {currentComponent}
+
+            <div className="form-controls">
+              <input
+                id="btnControl"
+                type="button"
+                value="Voltar"
+                onClick={() => changeStep(currentStep - 1)}
+                disabled={currentStep === 0}
+                className="btn-secondary"
+              />
+
+              {currentStep === 1 ? (
+                <input
+                  className="btn-primary"
+                  type="button"
+                  value="Finalizar"
+                  onClick={secondStepForm.handleSubmit(onSubmit)}
+                />
+              ) : (
+                <input
+                  className="btn-primary"
+                  type="button"
+                  value="Avançar"
+                  onClick={handleNext}
+                />
+              )}
+            </div>
+
+            <span className="form-footer">
+              Já possui uma conta?{" "}
+              <Link to="/login" className="auth-link">
+                <strong>Faça login</strong>
+              </Link>
+            </span>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

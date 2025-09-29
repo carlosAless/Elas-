@@ -265,9 +265,7 @@ export const SecondStepForm = ({ register, errors, watch, setValue }) => {
           >
             <option value="Gestor Público">Gestor Público</option>
             <option value="Moderador">Moderador</option>
-            <option value="Organização não governamental">
-              Organização não governamental
-            </option>
+            <option value="ONG">Organização não governamental</option>
             <option value="Cidadão">Cidadão</option>
             <option value="Outro">Outro</option>
           </select>
