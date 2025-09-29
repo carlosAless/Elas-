@@ -63,13 +63,16 @@ export const Register = () => {
         ...data,
       };
       try {
-        const response = await fetch("http://localhost:8081/auth/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(completeData),
-        });
+        const response = await fetch(
+          `${import.meta.env.VITE_REACT_APP_API_URL}/auth/register`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(completeData),
+          }
+        );
 
         const result = await response.json();
 
