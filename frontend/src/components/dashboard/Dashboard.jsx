@@ -35,7 +35,7 @@ export const Dashboard = ({ session }) => {
           {/* Aqui você pode adicionar os módulos do seu sistema */}
           <div className="modules-grid">
             <div className="module-card">
-              <h3>💬 Conversas</h3>
+              <h3>💬 Conversas sss</h3>
               <p>Gerencie mensagens e contatos</p>
             </div>
 
