@@ -1,0 +1,106 @@
+.botbuilder-wrapper {
+  display: flex;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* 🧭 Sidebar Esquerda */
+.sidebar-left {
+  width: 240px;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.sidebar-left h4 {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.sidebar-item {
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-top: 8px;
+  border-radius: 6px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-item:hover {
+  background: #e9ecef;
+}
+
+/* 🎨 Canvas Central */
+.canvas {
+  flex: 1;
+  background: #fff;
+  position: relative;
+}
+
+/* 📊 Sidebar Direita */
+.sidebar-right {
+  width: 300px;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.info-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+.info-box h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 🧩 Nós */
+.node {
+  padding: 10px;
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 8px;
+  min-width: 220px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.node-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.node-icon {
+  font-size: 18px;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.react-flow__handle {
+  width: 14px;
+  height: 14px;
+  background: #0d6efd;
+  border: 2px solid #fff;
+  cursor: pointer;
+}

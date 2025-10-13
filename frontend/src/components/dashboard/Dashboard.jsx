@@ -2,6 +2,13 @@
 import React from "react";
 import { supabase } from "../../helper/supabaseClient";
 import "./Dashboard.css";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
+
+import Sidebar from "./sidebar/Sidebar";
+import DashboardHome from "./pages/DashboardHome";
+import Messages from "./pages/Messages";
+import BotBuilder from "./pages/botbuilder/BotBuilder";
+import Settings from "./pages/Settings";
 
 export const Dashboard = ({ session }) => {
   const handleLogout = async () => {
@@ -20,42 +27,29 @@ export const Dashboard = ({ session }) => {
           <div className="user-info">
             <span>Bem-vindo, {session.user.email}</span>
             <button onClick={handleLogout} className="logout-btn">
+              <i className="fas fa-sign-out-alt"></i>
               Sair
             </button>
           </div>
         </div>
       </header>
 
-      {/* Conteúdo principal do Dashboard */}
-      <main className="dashboard-main">
-        <div className="welcome-section">
-          <h2>Painel Administrativo</h2>
-          <p>Gerencie suas conversas e bots de WhatsApp</p>
+      <div className="dashboard-layout">
+        {/* Sidebar de Navegação */}
+        <Sidebar />
 
-          {/* Aqui você pode adicionar os módulos do seu sistema */}
-          <div className="modules-grid">
-            <div className="module-card">
-              <h3>💬 Conversas sss</h3>
-              <p>Gerencie mensagens e contatos</p>
-            </div>
+        {/* Conteúdo principal do Dashboard */}
+        <main className="dashboard-main">
+          <Routes>
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/" element={<DashboardHome />} />
 
-            <div className="module-card">
-              <h3>🤖 Bots</h3>
-              <p>Crie e gerencie chatbots</p>
-            </div>
-
-            <div className="module-card">
-              <h3>📊 Relatórios</h3>
-              <p>Analise o desempenho</p>
-            </div>
-
-            <div className="module-card">
-              <h3>⚙️ Configurações</h3>
-              <p>Configure sua conta</p>
-            </div>
-          </div>
-        </div>
-      </main>
+            <Route path="messages" element={<Messages />} />
+            <Route path="botbuilder" element={<BotBuilder />} />
+            <Route path="settings" element={<Settings />} />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 };

@@ -57,7 +57,7 @@ function App() {
             element={!session ? <Register /> : <Navigate to="/dashboard" />}
           />
           <Route
-            path="/dashboard"
+            path="/dashboard/*"
             element={
               session ? (
                 <Dashboard session={session} />
