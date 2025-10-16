@@ -42,7 +42,7 @@ export const Dashboard = ({ session }) => {
         <main className="dashboard-main">
           <Routes>
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/" element={<DashboardHome />} />
+            <Route index element={<DashboardHome />} />
 
             <Route path="messages" element={<Messages />} />
             <Route path="botbuilder" element={<BotBuilder />} />
