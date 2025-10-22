@@ -8,7 +8,7 @@ import Sidebar from "./sidebar/Sidebar";
 import DashboardHome from "./pages/DashboardHome";
 import Messages from "./pages/Messages";
 import BotBuilder from "./pages/botbuilder/BotBuilder";
-import Settings from "./pages/Settings";
+import Settings from "./pages/settings/Settings";
 
 export const Dashboard = ({ session }) => {
   const handleLogout = async () => {
