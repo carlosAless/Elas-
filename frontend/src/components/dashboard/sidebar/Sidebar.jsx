@@ -2,23 +2,32 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Sidebar.css";
+import { MdDashboard } from "react-icons/md";
+import { FaMessage } from "react-icons/fa6";
+import { FaRobot } from "react-icons/fa";
+import { IoSettings } from "react-icons/io5";
 
 const Sidebar = ({ session }) => {
   const location = useLocation();
 
   const menuItems = [
-    { path: "/dashboard", label: "Dashboard", icon: "📊" },
-    { path: "/dashboard/messages", label: "Conversas", icon: "💬" },
-    { path: "/dashboard/botbuilder", label: "Criador de Bot", icon: "🤖" },
-    { path: "/dashboard/settings", label: "Configurações", icon: "⚙️" },
+    { path: "/dashboard", label: "Dashboard", icon: <MdDashboard /> },
+    { path: "/dashboard/messages", label: "Conversas", icon: <FaMessage /> },
+    {
+      path: "/dashboard/botbuilder",
+      label: "Criador de Bot",
+      icon: <FaRobot />,
+    },
+    {
+      path: "/dashboard/settings",
+      label: "Configurações",
+      icon: <IoSettings />,
+    },
   ];
 
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <div className="logo">
-          <h2>Meu Dashboard</h2>
-        </div>
         <div className="user-info">
           <span>{session?.user?.email}</span>
         </div>
