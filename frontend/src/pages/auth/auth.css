@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap");
+
 .containerRegister {
   width: 100%;
   height: 100vh;
@@ -25,6 +27,7 @@
   display: flex;
   flex-direction: column;
   height: 60px;
+  gap: 4px;
   position: relative;
 }
 
@@ -33,6 +36,8 @@
   border-radius: 0.4rem;
   border: 1px solid rgb(163, 170, 179);
   padding-left: 30px;
+  background: thistle;
+  height: 45px;
 }
 
 #formRegister .inputGroup .btnRegister {
@@ -50,6 +55,7 @@
   position: absolute;
   transform: translate(8px, 130%);
   color: #979797;
+  width: 45px;
 }
 
 #formRegister strong {
@@ -110,10 +116,6 @@
   bottom: -40%;
 }
 
-.inputGroup {
-  margin-bottom: 1.5rem;
-}
-
 .btnBack {
   background-color: #f5f5f5;
   color: #333;
@@ -144,68 +146,99 @@
 }
 
 .auth-container {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
   display: flex;
-  max-width: 1200px;
-  max-height: 777px;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container .auth-box {
+  max-height: 440px;
+  max-width: 563px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 16px;
+}
+
+.auth-container div .information {
+  max-width: 247px;
+  background-color: #f6dceb;
+  border-radius: 20px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  color: #4b158c;
+  padding: 16px;
+  text-align: center;
+}
+
+.auth-container div .information span {
+  font-size: 15px;
+  font-family: "Hedvig Letters Sans", sans-serif;
+}
+.auth-container div .information h2 {
+  font-size: 32px;
+  font-family: "Hedvig Letters Sans", sans-serif;
 }
 
 .auth-image-left {
-  width: 100%;
+  width: 50%;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   object-fit: cover;
   height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.auth-image-right {
-  width: 100%;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  object-fit: cover;
-  height: 100%;
-}
 .containerLogin {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f2f5;
 }
 
 #formLogin {
   border-radius: 1rem 0rem 0rem 1rem;
-  padding: 2rem;
-  background-color: white;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 30px;
   max-width: 450px;
 }
 
 #formLogin .inputGroup {
   display: flex;
   flex-direction: column;
-  height: 60px;
   position: relative;
 }
 
 #formLogin .inputGroup input {
   height: 50px !important;
   border-radius: 0.4rem;
-  border: 1px solid rgb(163, 170, 179);
   padding-left: 30px;
+  border: none;
+  background: #f4ecf0;
+  height: 45px !important;
 }
 
 input[type="submit"] {
   padding: 0 !important;
 }
 
-#formLogin .inputGroup .btnLogin {
+#formLogin .btnContainerLogin .btnLogin {
   cursor: pointer;
-  background-color: #4a90e2;
+  background-color: #ec1380;
   color: white;
   font-size: large;
   border: none;
+  height: 45px;
 }
 
 #formLogin .inputGroup label {
@@ -216,6 +249,13 @@ input[type="submit"] {
   position: absolute;
   transform: translate(8px, 130%);
   color: #979797;
+  width: 30px;
+  height: 45px;
+  bottom: 58px;
+  left: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #formLogin strong {
@@ -225,4 +265,45 @@ input[type="submit"] {
 
 #formLogin span {
   text-align: center;
+}
+
+@media (max-width: 580px) {
+  .auth-image-left {
+    display: none;
+  }
+
+  .auth-container {
+    display: block;
+  }
+
+  .auth-box {
+    display: block !important;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: #f6dceb !important;
+  }
+
+  .information {
+    min-width: 100%;
+    min-height: 30vh;
+    border-radius: 0px !important;
+  }
+
+  #formLogin {
+    background: white;
+    border-radius: 128px 0px 0px 0px;
+    max-width: 100vw;
+    min-height: 70vh;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1220px) {
+  .auth-container {
+    width: 100%;
+  }
+
+  .auth-image-left {
+    width: 100%;
+  }
 }

@@ -35,66 +35,65 @@ export const Login = () => {
 
   return (
     <div className="containerLogin">
+      <img
+        src={images.mulheres}
+        alt="ElasPorElas - Ilustração"
+        className="auth-image-left"
+      />
       <div className="auth-container">
-        <form id="formLogin" onSubmit={handleLogin}>
-          <div className="title">
-            <h1>
-              ElasPorElas<span className="rose">+</span>
-            </h1>
-          </div>
-
-          <span>Entre na sua conta para começar a fazer a diferença</span>
-
-          {errorMsg && <p className="error">{errorMsg}</p>}
-
-          <div className="inputGroup">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Digite seu email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <span className="iconsInput">
-              <IoMdMail />
+        <div className="auth-box">
+          <div className="information">
+            <h2>Você não está sozinha. Estamos aqui para te ouvir</h2>
+            <span>
+              Este é um canal seguro e confidencial para mulheres fazerem
+              denúncias de forma rápida e direto pelo WhatsApp. Sua conversa é
+              sigilosa.
             </span>
           </div>
+          <form id="formLogin" onSubmit={handleLogin}>
+            {errorMsg && <p className="error">{errorMsg}</p>}
 
-          <div className="inputGroup">
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Digite sua senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <span className="iconsInput">
-              <FaLock />
+            <div className="inputGroup">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Digite seu email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <span className="iconsInput">
+                <IoMdMail />
+              </span>
+            </div>
+
+            <div className="inputGroup">
+              <label htmlFor="password">Senha</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Digite sua senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <span className="iconsInput">
+                <FaLock />
+              </span>
+            </div>
+
+            <div className="btnContainerLogin">
+              <input className="btnLogin" type="submit" value="Login" />
+            </div>
+
+            <span>
+              Não possui uma conta?{" "}
+              <Link to="/cadastro" style={{ textDecoration: "none" }}>
+                <strong>Criar conta</strong>
+              </Link>
             </span>
-          </div>
-
-          <div className="inputGroup">
-            <input className="btnLogin" type="submit" value="Login" />
-          </div>
-
-          <span>
-            Não possui uma conta?{" "}
-            <Link to="/cadastro" style={{ textDecoration: "none" }}>
-              <strong>Criar conta</strong>
-            </Link>
-          </span>
-        </form>
-
-        <div className="auth-rigth-panel">
-          <img
-            src={images.mulheres}
-            alt="ElasPorElas - Ilustração"
-            className="auth-image-right"
-          />
+          </form>
         </div>
       </div>
     </div>
