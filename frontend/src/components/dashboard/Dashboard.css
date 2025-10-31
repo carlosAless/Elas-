@@ -18,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  max-width: 100%;
+  min-width: 100%;
 }
 
 .header-content h1 {
@@ -96,9 +96,9 @@
 }
 
 .sidebar a.active {
-  background: #eff6ff;
-  color: #3b82f6;
-  border-left-color: #3b82f6;
+  background: #EC1380;
+  color: white;
+  border-left-color: #EC1380;
   font-weight: 500;
 }
 
@@ -107,12 +107,6 @@
   text-align: center;
 }
 
-/* Conteúdo Principal */
-.dashboard-main {
-  flex: 1;
-  padding: 2rem;
-  overflow-y: auto;
-}
 
 .page-content {
   background: white;
@@ -191,6 +185,26 @@
   color: #475569;
 }
 
+.notifications svg{
+  color: black;
+  cursor: pointer;
+}
+
+.userAccount{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: #dddfe2;
+
+}
+
+.userAccount svg{
+  color: black;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .dashboard-layout {

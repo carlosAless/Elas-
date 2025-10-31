@@ -3,6 +3,8 @@ import React from "react";
 import { supabase } from "../../helper/supabaseClient";
 import "./Dashboard.css";
 import { Routes, Route, Navigate, Link } from "react-router-dom";
+import { FaUserLarge } from "react-icons/fa6";
+import { IoNotifications } from "react-icons/io5";
 
 import Sidebar from "./sidebar/Sidebar";
 import DashboardHome from "./pages/DashboardHome";
@@ -23,13 +25,18 @@ export const Dashboard = ({ session }) => {
       {/* Header do Dashboard */}
       <header className="dashboard-header">
         <div className="header-content">
-          <h1>Dashboard</h1>
+          <h1>ElasPorElas+</h1>
           <div className="user-info">
-            <span>Bem-vindo, {session.user.email}</span>
-            <button onClick={handleLogout} className="logout-btn">
-              <i className="fas fa-sign-out-alt"></i>
-              Sair
-            </button>
+            <div className="notifications">
+<IoNotifications />
+
+            </div>
+
+            <div className="userAccount">
+<FaUserLarge />
+
+            </div>
+
           </div>
         </div>
       </header>

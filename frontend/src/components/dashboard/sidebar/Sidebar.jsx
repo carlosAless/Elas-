@@ -1,7 +1,6 @@
 // components/dashboard/sidebar/Sidebar.js
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Sidebar.css";
 import { MdDashboard } from "react-icons/md";
 import { FaMessage } from "react-icons/fa6";
 import { FaRobot } from "react-icons/fa";

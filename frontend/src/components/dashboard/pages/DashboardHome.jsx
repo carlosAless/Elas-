@@ -217,18 +217,7 @@ const DashboardHome = () => {
   return (
     <div className="dashboard">
       {/* Header */}
-      <header className="dashboard-header">
-        <div className="header-left">
-          <h1>Central de Apoio</h1>
-          <span className="subtitle">Sistema de Denúncias</span>
-        </div>
-        <div className="header-right">
-          <div className="user-menu">
-            <span>Operador</span>
-            <div className="user-avatar">OP</div>
-          </div>
-        </div>
-      </header>
+     
 
       {/* Navigation */}
       <nav className="dashboard-nav">
