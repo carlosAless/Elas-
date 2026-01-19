@@ -12,6 +12,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@supabase/supabase-js": "^2.57.0",
+    "@tailwindcss/vite": "^4.1.16",
     "dotenv": "^17.2.2",
     "formik": "^2.4.6",
     "lucide-react": "^0.546.0",
@@ -21,6 +22,7 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.8.2",
     "reactflow": "^11.11.4",
+    "tailwindcss": "^4.1.16",
     "yup": "^1.7.0",
     "zod": "^4.1.11"
   },

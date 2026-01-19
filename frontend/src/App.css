@@ -1,7 +1,19 @@
 :root {
   --standard-color: cornflowerblue;
 
+  --secondary-color: #ec1380;
+
+  --third-color: #f6dceb;
+
+  --fourth-color: #4b158c;
+
+  --fifth-color: #5c374c;
+
+  --sixth-color: #391326;
+
   --standard-font-weight: 500;
+
+  --border-standard: 20px;
 }
 
 .title {
@@ -10,4 +22,258 @@
 
 .rose {
   color: rgb(236, 131, 131);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.bubble-orchestra {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+/* Bolha principal */
+.main-bubble {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 65px;
+  background: linear-gradient(135deg, #ff6bcb 0%, #ff2e9a 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: mainBubble 3s ease-in-out infinite;
+  box-shadow:
+    0 0 20px rgba(255, 107, 203, 0.4),
+    inset 10px -10px 20px rgba(255, 46, 154, 0.3),
+    inset -5px 5px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Efeito de brilho interno */
+.main-bubble::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 20px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: rotate(30deg);
+}
+
+/* Partículas */
+.bubble-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #ff9ad5 0%, #ff5fa2 100%);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+/* Animações individuais para cada partícula */
+.particle-1 {
+  width: 12px;
+  height: 10px;
+  animation: particleFloat 2s ease-in-out infinite 0s;
+}
+
+.particle-2 {
+  width: 8px;
+  height: 10px;
+  animation: particleFloat 2s ease-in-out infinite 0.3s;
+}
+
+.particle-3 {
+  width: 10px;
+  height: 8px;
+  animation: particleFloat 2s ease-in-out infinite 0.6s;
+}
+
+.particle-4 {
+  width: 9px;
+  height: 11px;
+  animation: particleFloat 2s ease-in-out infinite 0.9s;
+}
+
+.particle-5 {
+  width: 11px;
+  height: 9px;
+  animation: particleFloat 2s ease-in-out infinite 1.2s;
+}
+
+.particle-6 {
+  width: 7px;
+  height: 9px;
+  animation: particleFloat 2s ease-in-out infinite 1.5s;
+}
+
+/* Animação da partícula saindo e voltando */
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    border-radius: 50%;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    border-radius: 45% 55% 52% 48% / 60% 40% 60% 40%;
+  }
+  80% {
+    opacity: 0.8;
+  }
+}
+
+/* Direções diferentes para cada partícula */
+.particle-1 {
+  animation-name: particleFloat1;
+}
+
+.particle-2 {
+  animation-name: particleFloat2;
+}
+
+.particle-3 {
+  animation-name: particleFloat3;
+}
+
+.particle-4 {
+  animation-name: particleFloat4;
+}
+
+.particle-5 {
+  animation-name: particleFloat5;
+}
+
+.particle-6 {
+  animation-name: particleFloat6;
+}
+
+@keyframes particleFloat1 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(calc(-50% - 60px), calc(-50% - 40px));
+    opacity: 1;
+  }
+}
+
+@keyframes particleFloat2 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(calc(-50% + 70px), calc(-50% - 30px));
+    opacity: 1;
+  }
+}
+
+@keyframes particleFloat3 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(calc(-50% - 40px), calc(-50% + 60px));
+    opacity: 1;
+  }
+}
+
+@keyframes particleFloat4 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(calc(-50% + 50px), calc(-50% + 50px));
+    opacity: 1;
+  }
+}
+
+@keyframes particleFloat5 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(calc(-50% - 80px), calc(-50% + 10px));
+    opacity: 1;
+  }
+}
+
+@keyframes particleFloat6 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(calc(-50% + 30px), calc(-50% - 70px));
+    opacity: 1;
+  }
+}
+
+/* Animação da bolha principal pulsando */
+@keyframes mainBubble {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+  25% {
+    border-radius: 45% 55% 52% 48% / 60% 40% 60% 40%;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    border-radius: 55% 45% 48% 52% / 40% 60% 40% 60%;
+  }
+  75% {
+    border-radius: 48% 52% 45% 55% / 60% 40% 60% 40%;
+  }
+}
+
+.loading-text {
+  margin-top: 2rem;
+  color: #ff2e9a;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  animation: textPulse 2s ease-in-out infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,253 @@
+/* components/dashboard/Dashboard.css */
+.dashboard-container {
+  min-height: 100vh;
+  background: #f8fafc;
+  display: flex;
+}
+
+.dashboard-header {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 1rem 2rem;
+  min-width: 100%;
+}
+
+.header-content h1 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info span {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+  width: 100vw;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: white;
+  border-right: 1px solid #e2e8f0;
+  padding: 1.5rem 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.sidebar a:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.sidebar a.active {
+  background: #ec1380;
+  color: white;
+  border-left-color: #ec1380;
+  font-weight: 500;
+}
+
+.sidebar i {
+  width: 16px;
+  text-align: center;
+}
+
+.page-content {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+}
+
+.page-content h2 {
+  margin: 0 0 1rem 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+}
+
+.page-content p {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+/* Welcome Section */
+.welcome-section h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+}
+
+.welcome-section > p {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.module-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.module-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.module-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+}
+
+.module-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Placeholder para conteúdo */
+.content-placeholder {
+  background: #f8fafc;
+  border: 2px dashed #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.content-placeholder h3 {
+  margin: 0 0 1rem 0;
+  color: #475569;
+}
+
+.notifications svg {
+  color: black;
+  cursor: pointer;
+}
+
+.userAccount {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: #dddfe2;
+}
+
+.userAccount svg {
+  color: black;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .sidebar li {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .sidebar a {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+  }
+
+  .sidebar a.active {
+    border-left-color: transparent;
+    border-bottom-color: #3b82f6;
+  }
+
+  .header-content {
+    padding: 1rem;
+  }
+
+  .dashboard-main {
+    padding: 1rem;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+}

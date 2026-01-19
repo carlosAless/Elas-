@@ -145,6 +145,10 @@
   border: 1px solid rgb(163, 170, 179);
 }
 
+.imagelogo {
+  width: 150px;
+}
+
 .auth-container {
   position: fixed;
   width: 50%;
@@ -152,6 +156,7 @@
   top: 0;
   right: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }

@@ -92,7 +92,7 @@ export const Register = () => {
   };
 
   return (
-    <div className="containerRegister">
+    <div className="">
       <div className="auth-container">
         <div className="auth-left-panel">
           <img
@@ -102,12 +102,14 @@ export const Register = () => {
           />
         </div>
 
-        <div className="auth-right-panel">
+        <div className="rounded-[var(--border-standard)]">
           <form id="formRegister" className="auth-form">
             <div className="form-title">
-              <h1>
-                ElasPorElas<span className="accent-color">+</span>
-              </h1>
+              <img
+                src={images.elasporelas}
+                alt="ElasPorElas - Ilustração"
+                className="w-50"
+              />
             </div>
 
             <span className="form-subtitle">

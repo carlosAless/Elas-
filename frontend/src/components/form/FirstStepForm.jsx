@@ -7,7 +7,6 @@ import { FaLock } from "react-icons/fa";
 export const FirstStepForm = ({ register, errors }) => {
   return (
     <>
-      {/* Nome Completo */}
       <div className="inputGroup">
         <label htmlFor="name">Nome Completo</label>
         <input

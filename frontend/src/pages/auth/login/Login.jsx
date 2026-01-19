@@ -41,6 +41,11 @@ export const Login = () => {
         className="auth-image-left"
       />
       <div className="auth-container">
+        <img
+          src={images.elasporelas}
+          alt="ElasPorElas - Ilustração"
+          className="imagelogo"
+        />
         <div className="auth-box">
           <div className="information">
             <h2>Você não está sozinha. Estamos aqui para te ouvir</h2>
