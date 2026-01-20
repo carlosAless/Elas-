@@ -8,6 +8,12 @@ import Chat from "/src/assets/chat.svg";
 import Hand from "/src/assets/hand-heart.svg";
 import UserCheck from "/src/assets/user-check.svg";
 import Arrow from "/src/assets/arrow-right.svg";
+import Scale from "/src/assets/scale.svg";
+import Brain from "/src/assets/brain.svg";
+import House from "/src/assets/house.svg";
+import BriefCase from "/src/assets/briefcase.svg";
+import Baby from "/src/assets/baby.svg";
+import HeartHandshake from "/src/assets/heart-handshake.svg";
 
 export const Home = () => {
   return (
@@ -182,7 +188,7 @@ export const Home = () => {
           <div className="rede-acolhedora">
             <div className="box">
               <img
-                src={HeartIcon}
+                src={Scale}
                 alt="Coração - Acolhimento"
                 className="box-icon"
               />
@@ -194,11 +200,7 @@ export const Home = () => {
             </div>
 
             <div className="box">
-              <img
-                src={ShieldIcon}
-                alt="Escudo - Proteção"
-                className="box-icon"
-              />
+              <img src={Brain} alt="Escudo - Proteção" className="box-icon" />
               <p className="title-box">Apoio Psicológico</p>
               <span>
                 Psicólogas especializadas em trauma e violência doméstica para
@@ -207,7 +209,7 @@ export const Home = () => {
             </div>
 
             <div className="box">
-              <img src={UsersIcon} alt="Usuários - Rede" className="box-icon" />
+              <img src={House} alt="Usuários - Rede" className="box-icon" />
               <p className="title-box">Abrigo Temporário</p>
               <span>
                 Parceria com casas de acolhimento para situações de emergência
@@ -215,7 +217,7 @@ export const Home = () => {
               </span>
             </div>
             <div className="box">
-              <img src={UsersIcon} alt="Usuários - Rede" className="box-icon" />
+              <img src={BriefCase} alt="Usuários - Rede" className="box-icon" />
               <p className="title-box">Capacitação Profissional</p>
               <span>
                 Cursos e workshops para desenvolvimento de habilidades e
@@ -223,7 +225,7 @@ export const Home = () => {
               </span>
             </div>
             <div className="box">
-              <img src={UsersIcon} alt="Usuários - Rede" className="box-icon" />
+              <img src={Baby} alt="Usuários - Rede" className="box-icon" />
               <p className="title-box">Apoio à Maternidade</p>
               <span>
                 Suporte para mães em situação de vulnerabilidade, incluindo
@@ -231,7 +233,11 @@ export const Home = () => {
               </span>
             </div>
             <div className="box">
-              <img src={UsersIcon} alt="Usuários - Rede" className="box-icon" />
+              <img
+                src={HeartHandshake}
+                alt="Usuários - Rede"
+                className="box-icon"
+              />
               <p className="title-box">Grupos de Apoio</p>
               <span>
                 Encontros virtuais e presenciais com outras mulheres que
